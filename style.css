@@ -92,6 +92,7 @@ p {
     font-size: 15px;
     font-weight: var(--fw-regular);
     color: var(--clr-secondary-Slate-500);
+    padding: 0 1rem;
 }
 
 article {
