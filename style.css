@@ -1,14 +1,26 @@
 :root {
-    --clr-primary-White: hsl(0, 0%, 100%);
+    /* White */
+    --clr-white: hsl(0, 0%, 100%);
 
-    --clr-secondary-Slate-300: hsl(212, 45%, 89%);
-    --clr-secondary-Slate-500: hsl(216, 15%, 48%);
-    --clr-secondary-Slate-900: hsl(218, 44%, 22%);
+    /* Stone */
+    --clr-stone-100: hsl(30, 54%, 90%);
+    --clr-stone-150: hsl(30, 18%, 87%);
+    --clr-stone-600: hsl(30, 10%, 34%);
+    --clr-stone-900: hsl(24, 5%, 18%);
 
-    --ff-outfit: "Outfit", sans-serif;
+    /* Brown */
+    --clr-brown-800: hsl(14, 45%, 36%);
+
+    /* Rose */
+    --clr-rose-800: hsl(332, 51%, 32%);
+    --clr-rose-50: hsl(330, 100%, 98%);
+
+    --ff-Young: "Young Serif", serif;
+    --ff-Outfit: "Outfit", sans-serif;
 
     --fw-regular: 400;
-    --fw-bold: 700;
+    --fw-bold-1: 700;
+    --fw-bold-2: 700;
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -71,61 +83,154 @@ p {
     text-wrap: pretty;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-wrap: balance;
-}
 
 
 body {
-    background-color: var(--clr-secondary-Slate-300);
+    background-color: var(--clr-stone-100);
     display: grid;
     place-items: center;
     height: 100vh;
-}
-
-p {
-    font-size: 15px;
+    font-family: var(--ff-Outfit);
     font-weight: var(--fw-regular);
-    color: var(--clr-secondary-Slate-500);
-    padding: 0 1rem;
 }
 
-article {
-    background-color: var(--clr-primary-White);
-    margin: 1rem;
-    padding: 1rem 1rem 3rem;
+.receipe__container {
+    background-color: var(--clr-white);
+    max-width: 38.5rem;
     border-radius: 1rem;
-    font-family: var(--ff-outfit);
-    text-align: center;
-    display: grid;
-    gap: 1rem;
-    max-width: 21rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-article img {
-    border-radius: 0.5rem;
+
+h1,
+h2 {
+    font-family: var(--ff-Young);
 }
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+h1 {
+    font-weight: var(--fw-regular);
+    line-height: 1.1;
 }
 
 h2 {
-    font-weight: var(--fw-bold);
-    color: var(--clr-secondary-Slate-900);
-    line-height: 1.2;
+    color: var(--clr-brown-800);
+    margin-bottom: 1.5rem;
+    font-weight: var(--fw-regular);
+}
+
+.receipe__pt h2 {
+    color: var(--clr-rose-800);
+    font-size: 1.25rem;
+    font-family: var(--ff-Outfit);
+    font-weight: var(--fw-bold-2);
+    margin-left: 1rem;
+    margin-bottom: 0.9rem;
+}
+
+
+
+span {
+    font-weight: var(--fw-bold-1);
+}
+
+.receipe__content {
+    padding: 2rem;
+    display: grid;
+    gap: 1rem;
+}
+
+p,
+ul li,
+ol li {
+    font-size: 1rem;
+    color: var(--clr-stone-600)
+}
+
+p {
+    color: var(--clr-stone-600)
+}
+
+ul {
+    padding-inline-start: 20px;
+}
+
+.receipe__pt ul {
+    padding-inline-start: 40px;
+}
+
+ol {
+    padding-left: 1.5rem;
+}
+
+li {
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+li::marker {
+    color: var(--clr-brown-800);
+    font-family: var(--ff-Outfit);
+    font-weight: var(--fw-bold-2);
+}
+
+.receipe__pt,
+.receipe__ingridents,
+.receipe__instructions,
+.receipe__nutrition {
+    background-color: var(--clr-rose-50);
+    padding: 1rem 1rem;
+}
+
+.receipe__pt {
+    padding: 1rem 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption,
+th,
+td {
+    text-align: start;
+}
+
+caption {
+    color: var(--clr-stone-600);
+    margin-bottom: 1rem;
+}
+
+th {
+    color: var(--clr-stone-600);
+    font-weight: var(--fw-regular);
+    padding: 0.7rem 1rem;
+}
+
+td {
+    color: var(--clr-brown-800);
+    font-weight: var(--fw-bold-2);
+
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid var(--clr-stone-150);
+}
+
+@media screen and (min-width:38.5rem) {
+    .receipe__container {
+        padding: 2.5rem;
+    }
+
+    .receipe__content {
+        padding: 0;
+    }
+
+    .receipe__content {
+        padding-top: 2.5rem;
+    }
+
+    .receipe__container img {
+        border-radius: 0.8rem;
+
+    }
 }
