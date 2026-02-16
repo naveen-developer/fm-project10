@@ -219,7 +219,7 @@ tr:not(:last-child) {
 @media screen and (min-width:38.5rem) {
     .receipe__container {
         padding: 2.5rem;
-        margin: 1.5rem;
+        margin: 6rem 1.5rem;
     }
 
     .receipe__content {
